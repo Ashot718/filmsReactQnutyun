@@ -8,8 +8,10 @@ import Card from "./Conponents/Card";
 
 function App() {
   const [page, setPage] = useState(1)
+ 
   const [pageNums, setPageNums] = useState([1, page, 3, "..."])
   const [populary, setPopulary] = useState([]);
+   const [searchInp,seSearchInp]= useState('')
   const api_key = "api_key=9b702a6b89b0278738dab62417267c49";
   const [ganres, setGanres] = useState([])
   const [filmganres,setFilmganres ] = useState([])
@@ -35,7 +37,7 @@ function App() {
     { id: 37, name: "Western" },
   ];
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/popular?${api_key}&page=${page}`)
+    fetch(`https://api.themoviedb.org/3/search/movie?${api_key}&query=${searchInp} &page=${page}`)
       .then((res) => res.json())
       .then((res) => {
         setPopulary(res.results)
@@ -73,6 +75,9 @@ function App() {
   }, [filmganres, page])
 
   return <div className="App">
+         <div className="search">
+           <input type="text" value={searchInp} onChange={(e)=>seSearchInp(e.target.value)} placeholder="pntrel naxntrac filmn" />
+        </div>
     <div className="ganres">
       {ganres.map((e, i) => {
         return <button key={i} onClick={() => {

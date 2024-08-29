@@ -53,3 +53,15 @@
     height: 500px;
     border: 2px solid #fff
   }
+  .search{
+    display: flex;
+    justify-content: center;
+  }
+  .search>input{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 500px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+  }
