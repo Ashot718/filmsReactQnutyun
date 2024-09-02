@@ -1,67 +1,68 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 
 
 .App {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: black;
-    gap: 20px;
-   
-  }
-  
-  
-  
-  .pages {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .parent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-   
-  
-  .ganres {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 50px;
-  }
-  
-  .ganres>button {
-    padding: 14px 20px;
-    background-color:rgba(255, 0, 0, 0.885) ;
-    border: none;
-    color:#fff ;
-  }
-  img {
-    width: 400px;
-    height: 500px;
-    border: 2px solid #fff
-  }
-  .search{
-    display: flex;
-    justify-content: center;
-  }
-  .search>input{
-    padding-bottom: 5px;
-    padding-top: 5px;
-    width: 500px;
-    height: 30px;
-    border-radius: 20px;
-    border: none;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+  gap: 20px;
+ 
+}
+
+.pagesBtn{
+  width:40px;
+  margin: 5px;
+  height:40px;
+  background:white;
+  color:black;
+}
+
+.pages {
+  display: flex;
+  gap: 20px;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+ 
+
+.ganres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px;
+}
+.ganres>button {
+  padding: 14px 20px;
+  background-color:rgba(255, 0, 0, 0.885) ;
+ border: 1px solid #fff;
+  color:#fff ;
+}
+
+
+
+
+
+
+
+img {
+  width: 400px;
+  height: 500px;
+  border: 2px solid #fff
+}
+

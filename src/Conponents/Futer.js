@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Futer() {
   return (
-    <Link  className='futer'>ГидОнлайн-  Твой гид в мире кино! © gidonline.one ♦ </Link>
+    <Link to={'/'} className='w-full h-[30px] text-black flex  justify-center '>ГидОнлайн-  Твой гид в мире кино! © gidonline.one ♦ </Link>
   )
 }
 
