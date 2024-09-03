@@ -38,15 +38,17 @@ console.log(vidio);
   return (
     <div className="w-full  " >
        <img src={img_url+single.backdrop_path} className="w-full h-screen absolute top-0 -z-20" />
-     <div className="w-70% h-70% flex flex-wrap gap-[40px] justify-center	 bg-black-[rgb(0,0,0,)] ">
+      <div className="w-70%  p-20px my-5 bg-black/50 ">
+      <div className="w-70% h-70% flex flex-wrap gap-[40px] justify-center	 ">
         <img src={img_url+single.poster_path} />
      <div  className="text-center gap-[20px] w-[500px] h-[500px] flex flex-col " >
       <h1 className="text-white text-4xl	"  > {single.original_title} </h1>
-      <samp className="text-green-600">{single.release_date} </samp>
+      <samp className="text-red-600">{single.release_date} </samp>
       <p className="text-white text-sm text-xl	 ">{single.overview} </p>
       
       </div>
      </div>
+      </div>
      <div className="bg-black">
         <h1 className=" text-4xl  text-white  text-center">Credits</h1>
          <div className="w-full flex overflow-x-scroll gap-2 ">
@@ -67,9 +69,10 @@ console.log(vidio);
      <div className="bg-black">
      <h1 className=" text-4xl  text-white  text-center">Videos</h1>
      <div className="w-full flex overflow-x-scroll gap-2 ">
-     {
+      <div className=" flex  gap-40" >
+      {
           vidio.map((elm,ind)=>{
-            return <div key={ind} className="w-full text-center flex gap-[50px]  ">
+            return <div key={ind} className="w-full text-center flex  ">
               <div className="w-[200px] h-[200px] p-40px m-5   ">
               <iframe  class='iframe'   allowfullscreen  src={` https://www.youtube.com/embed/${elm.key}`}  frameborder="0">  </iframe>
 
@@ -78,10 +81,9 @@ console.log(vidio);
             </div>
           })
         }
+      </div>
      </div>
-
      </div>
-    
     </div>
     
   );
