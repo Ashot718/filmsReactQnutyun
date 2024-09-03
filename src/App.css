@@ -7,7 +7,7 @@
 
 
 
-.App {
+/*.App {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
   background-color: black;
   gap: 20px;
  
-}
+}*/
 
 .pagesBtn{
   width:40px;
@@ -25,18 +25,9 @@
   color:black;
 }
 
-.pages {
-  display: flex;
-  gap: 20px;
-}
 
-.parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+
+
  
 
 .ganres {
@@ -61,8 +52,7 @@
 
 
 img {
-  width: 400px;
-  height: 500px;
+
   border: 2px solid #fff
 }
 

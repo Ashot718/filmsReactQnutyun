@@ -114,9 +114,9 @@ function App() {
         }
       })
   }, [filmganres, page])
+//items-center	flex-wrap	
 
-
-  return <div className="App">
+  return <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
     <div className="flex justify-center  ">
            <input type="text" className="p-20px text-black w-full text-2xl rounded-2xl m-10  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
         </div>
@@ -127,7 +127,7 @@ function App() {
         }}>{e.name}</button>
       })}
     </div>
-    <div className="parent">
+    <div className="flex justify-center items-center flex-wrap gap-[20px]">
       {
         populary.map((e) => {
           return <Card populary={e} key={e.id} />
@@ -135,11 +135,11 @@ function App() {
       }
     </div>
 
-    <div className="pages">
+    <div className="flex g-[20px]">
       {pageNums.map((e, i) => {
 
         if (e >= 1) {
-          return <button key={i} onClick={() => setPage(e)} className="pagesBtn">{e}</button>
+          return <button key={i} onClick={() => setPage(e)} className="w-[40px] h-[40px] m-5 bg-white text-black">{e}</button>
         }
         
       })}
