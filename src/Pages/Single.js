@@ -8,6 +8,7 @@ function Single() {
   //  let filmId = location.search.replace(/[^0-9]/g,'')
     const id = useParams();
     const [vidio,setVidio]= useState([])
+    const [popap ,setpopap]=useState([])
     const [single, setSingle] = useState({});
     const [actior,setActior]= useState([])
     const api_key = "api_key=9b702a6b89b0278738dab62417267c49";
@@ -32,22 +33,20 @@ function Single() {
     .then((res) => res.json())
     .then((res) => setVidio(res.results));
 },[]);
-console.log(vidio);
+
 
     
   return (
     <div className="w-full  " >
-       <img src={img_url+single.backdrop_path} className="w-full h-screen absolute top-0 -z-20" />
-      <div className="w-full  p-20px my-2 bg-black/50 ">
-      <div className="w-70% h-70% flex flex-wrap gap-[40px] justify-center	 ">
-        <img src={img_url+single.poster_path} />
-     <div  className="text-center gap-[20px] w-[500px] h-[500px] flex flex-col " >
-      <h1 className="text-white text-4xl	"  > {single.original_title} </h1>
-      <samp className="text-red-600">{single.release_date} </samp>
-      <p className="text-white  text-xl	 ">{single.overview} </p>
-      
-      </div>
-     </div>
+       <img src={img_url+single.backdrop_path}className="w-full h-screen absolute top-0 -z-20"/>
+    <div className="w-full h-[80vh] flex justify-center items-center gap-[80px] ">
+    <img src={img_url+single.poster_path}  className="w-[350px] h-500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg" /> 
+        <div className="w-[600px] h-[500px] p-[20px] bg-[rgb(0,0,0,0.6)]  flex flex-col gap-5 rounded-lg  m-5">
+          <h1 className="text-3xl text-center text-white">{single.original_title}</h1>
+          <span className="text-2xl text-green-600 text-center" >{single.vote_average} </span>
+          <span className="text-2xl text-red-600 text-center"> {single.release_date}</span>
+          <h3 className="text-center text-white   text-xl	">{single.overview}</h3>
+        </div>
       </div>
      <div className="bg-black">
         <h1 className=" text-4xl  text-white  text-center">Credits</h1>
@@ -55,7 +54,7 @@ console.log(vidio);
         {
           actior.map((e,i)=>{
             return <div key={i} className="w-full text-center  ">
-              <div className="w-[400px] h-[500px] p-40px m-5   ">
+              <div className="w-[400px] h-[500px] p-[40px] m-5   ">
               <img src={img_url+e.profile_path}  className='w-[350px] h-[400px]'/>
               <h1 className="text-3xl text-white">{e.name} </h1>
               </div>
@@ -66,22 +65,33 @@ console.log(vidio);
          </div>
      </div>
 
-     <div className="bg-black">
-     <h1 className=" text-4xl  text-white  text-center">Videos</h1>
-     <div className="w-full flex overflow-x-scroll gap-2 ">
-      <div className=" flex  gap-40 " >
-      {
-          vidio.map((elm,ind)=>{
-            return <div key={ind} className="w-full text-center flex  ">
-              <div className="w-[200px] h-[200px] p-40px m-5   ">
-              <iframe  class='iframe'   allowfullscreen  src={` https://www.youtube.com/embed/${elm.key}`}  frameborder="0">  </iframe>
+     <div className="w-full h-[300px] pt-5 bg-black">
+        <h1 className="text-4xl  text-white  text-center">Vidio</h1>
+        <div className="w-full flex overflow-x-scroll gap-2  ">
+        <div className=" flex  gap-40 " >
+      {    
+        vidio.map((elem, ind) => {
+          return (
+            <div key={ind}>
+                <div
+                  className="relative  w-[200px] h-[200px] p-[40px]  "
+                  onClick={() => setpopap(elem.key)}>
+                  <iframe
+                    allowFullScreen
+                    src={`https://www.youtube.com/embed/${elem.key}`}
+                   
+                    ></iframe>
+                  <div className="w-[200px] h-[200px]  bg-none absolute z-20 top-0 cursor-pointer "></div>
+                </div>
+
               </div>
-            </div>
-          })
-        }
+            );
+          })}
+          </div>
+        </div>
       </div>
-     </div>
-     </div>
+      {popap !== "" ? <div className="w-full h-screen fixed z-20 bg-[rgba(0,0,0,0.465)] top-0 flex justify-center items-center cursor-pointer p-[5px] " onClick={() => setpopap("")}>
+        <iframe allowFullScreen src={`https://www.youtube.com/embed/${popap}`} className="h-[90%] w-[90%] relative"></iframe></div> : null}
     </div>
     
   );
@@ -93,4 +103,4 @@ export default Single;
 //https://api.themoviedb.org/3/movie/ֆիլմիԱյդԻն/credits?api_key=ՁերՔեյը
 
 
-//
+// className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.7)] "

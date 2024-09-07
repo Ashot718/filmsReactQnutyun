@@ -5,7 +5,7 @@ import App from './App';
 import Single from './Pages/Single';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Leiaute from './Leiaute';
-import Error from './Error';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +16,6 @@ root.render(
         <Route path='/' element={<Leiaute/>}>
         <Route index element={<App />}/>
         <Route path="/single/:id" element={<Single/>} />
-         <Route path='*' element = {<Error/>}/>
         </Route>
         
       </Routes>
