@@ -115,10 +115,12 @@ function App() {
   }, [filmganres, page])
 //items-center	flex-wrap	
 
+
   return <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
     <div className="flex justify-center  ">
-           <input type="text" className="px-40 text-black w-full text-2xl rounded-2xl m-5  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
+           <input type="text" className="px-[40px] text-black w-full text-2xl rounded-2xl m-5  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
         </div>
+
     <div className="flex justify-center items-center flex-wrap gap-[50px] p-[50px] ">
       {ganres.map((e, i) => {
          return <button className="px-[15px] py-[12px] bg-[rgba(255,0,0,0.885)] border-[1px] border-white cursor-pointer text-white  " key={i} onClick={() => {

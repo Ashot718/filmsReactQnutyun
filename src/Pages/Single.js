@@ -8,8 +8,8 @@ function Single() {
   //  let filmId = location.search.replace(/[^0-9]/g,'')
     const id = useParams();
     const [vidio,setVidio]= useState([])
-    const [popap ,setpopap]=useState([])
-    const [single, setSingle] = useState({});
+    const [popap ,setpopap]=useState("")
+    const [single, setSingle] = useState([]);
     const [actior,setActior]= useState([])
     const api_key = "api_key=9b702a6b89b0278738dab62417267c49";
     useEffect(() => {
@@ -40,10 +40,11 @@ function Single() {
     <div className="w-full  " >
        <img src={img_url+single.backdrop_path}className="w-full h-screen absolute top-0 -z-20"/>
     <div className="w-full h-[80vh] flex justify-center items-center gap-[80px] ">
-    <img src={img_url+single.poster_path}  className="w-[350px] h-500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg" /> 
+    <img src={img_url+single.poster_path}  className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg " /> 
         <div className="w-[600px] h-[500px] p-[20px] bg-[rgb(0,0,0,0.6)]  flex flex-col gap-5 rounded-lg  m-5">
           <h1 className="text-3xl text-center text-white">{single.original_title}</h1>
-          <span className="text-2xl text-green-600 text-center" >{single.vote_average} </span>
+          <h2 className=" text-2xl text-yellow-300 text-center"> Average</h2>
+          <span className="text-2xl text-green-600 text-center " > {single.vote_average} </span>
           <span className="text-2xl text-red-600 text-center"> {single.release_date}</span>
           <h3 className="text-center text-white   text-xl	">{single.overview}</h3>
         </div>
@@ -55,7 +56,7 @@ function Single() {
           actior.map((e,i)=>{
             return <div key={i} className="w-full text-center  ">
               <div className="w-[400px] h-[500px] p-[40px] m-5   ">
-              <img src={img_url+e.profile_path}  className='w-[350px] h-[400px]'/>
+              <img src={img_url+e.profile_path}  className='w-[350px] h-[400px] border-[1px] border-white'/>
               <h1 className="text-3xl text-white">{e.name} </h1>
               </div>
              
