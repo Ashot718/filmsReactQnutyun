@@ -7,9 +7,9 @@ function Single() {
     const img_url = "https://image.tmdb.org/t/p/w500";
   //  let filmId = location.search.replace(/[^0-9]/g,'')
     const id = useParams();
+    const [single, setSingle] = useState([]);  
     const [vidio,setVidio]= useState([])
     const [popap ,setpopap]=useState("")
-    const [single, setSingle] = useState([]);
     const [actior,setActior]= useState([])
     const api_key = "api_key=9b702a6b89b0278738dab62417267c49";
     useEffect(() => {
@@ -51,11 +51,11 @@ function Single() {
       </div>
      <div className="bg-black">
         <h1 className=" text-4xl  text-white  text-center">Credits</h1>
-         <div className="w-full flex overflow-x-scroll gap-2 ">
+         <div className="w-full flex overflow-x-scroll  ">
         {
           actior.map((e,i)=>{
             return <div key={i} className="w-full text-center  ">
-              <div className="w-[400px] h-[500px] p-[40px] m-5   ">
+              <div className="w-[400px] h-[500px] p-[20px]    ">
               <img src={img_url+e.profile_path}  className='w-[350px] h-[400px] border-[1px] border-white'/>
               <h1 className="text-3xl text-white">{e.name} </h1>
               </div>

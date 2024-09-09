@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Conponents/Card";
+import "./App.css";
 
 const ganre = [
   { id: 28, name: "action" },
@@ -115,17 +116,23 @@ function App() {
   }, [filmganres, page])
 //items-center	flex-wrap	
 
-
+const ganresButColor = document.querySelectorAll(".ganresButColor")
   return <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
     <div className="flex justify-center  ">
            <input type="text" className="px-[40px] text-black w-full text-2xl rounded-2xl m-5  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
         </div>
 
     <div className="flex justify-center items-center flex-wrap gap-[50px] p-[50px] ">
-      {ganres.map((e, i) => {
-         return <button className="px-[15px] py-[12px] bg-[rgba(255,0,0,0.885)] border-[1px] border-white cursor-pointer text-white  " key={i} onClick={() => {
-          setFilmganres(e.id)
-        }}>{e.name}</button>
+    {ganres.map((e, i) => {
+        return <button key={i} onClick={() => {
+          ganresButColor[i].classList.toggle("colors")
+          setPage(1)
+          if (ganresButColor[i].className !== "ganresButColor") {
+            setFilmganres([...filmganres, e.id])
+          } else {
+            setFilmganres(filmganres.filter((elm) => elm !== e.id))
+          }
+        }} className= "ganresButColor ">{e.name}</button>
       })}
     </div>
     <div className="flex justify-center items-center flex-wrap gap-[20px]">
