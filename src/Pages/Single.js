@@ -40,13 +40,12 @@ function Single() {
     <div className="w-full  " >
        <img src={img_url+single.backdrop_path}className="w-full h-screen absolute top-0 -z-20"/>
     <div className="w-full h-[80vh] flex justify-center items-center gap-[80px] ">
-    <img src={img_url+single.poster_path}  className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg " /> 
+    <img src={img_url+single.poster_path}  className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg  md:hidden " /> 
         <div className="w-[600px] h-[500px] p-[20px] bg-[rgb(0,0,0,0.6)]  flex flex-col gap-5 rounded-lg  m-5">
           <h1 className="text-3xl text-center text-white">{single.original_title}</h1>
-          <h2 className=" text-2xl text-yellow-300 text-center"> Average</h2>
-          <span className="text-2xl text-green-600 text-center " > {single.vote_average} </span>
+          <span className="text-2xl text-green-600 text-center " >Average  {single.vote_average} </span>
           <span className="text-2xl text-red-600 text-center"> {single.release_date}</span>
-          <h3 className="text-center text-white   text-xl	">{single.overview}</h3>
+          <h3 className="text-center text-white   	">{single.overview}</h3>
         </div>
       </div>
      <div className="bg-black">

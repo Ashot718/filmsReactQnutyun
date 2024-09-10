@@ -5,6 +5,7 @@ import App from './App';
 import Single from './Pages/Single';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Leiaute from './Leiaute';
+import Erorr from './Conponents/Erorr';
 
 
 
@@ -16,6 +17,7 @@ root.render(
         <Route path='/' element={<Leiaute/>}>
         <Route index element={<App />}/>
         <Route path="/single/:id" element={<Single/>} />
+        <Route path='*' element={<Erorr/>}/>
         </Route>
         
       </Routes>

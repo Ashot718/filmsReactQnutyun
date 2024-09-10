@@ -3,6 +3,7 @@ import Futer from './Conponents/Futer'
 import Header from './Conponents/Header'
 import { Outlet } from 'react-router-dom'
 
+
 function Leiaute() {
   return (
     <div>
@@ -10,6 +11,7 @@ function Leiaute() {
         <min>
             <Outlet/>
         </min>
+        
         <Futer/>
     </div>
   )
