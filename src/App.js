@@ -42,7 +42,7 @@ function App() {
               let arr = page > 1 ? [page - 1] : []
               for (let i = page; i < res.total_pages; i++) {
                 arr.push(i)
-                if (i - page === 10) {
+                if (i - page === 4) {
                   break
                 }
               }
@@ -62,7 +62,8 @@ function App() {
             let arr = page > 1 ? [page - 1] : []
             for (let i = page; i < res.total_pages; i++) {
               arr.push(i)
-              if (i - page === 10) {
+              
+              if (i - page === 4) {
                 break
               }
             }
@@ -73,6 +74,8 @@ function App() {
         );
     }
   }, [searchInp]);
+  
+  
 
 
   useEffect(() => {
@@ -85,7 +88,7 @@ function App() {
             let arr = page > 1 ? [page - 1] : []
             for (let i = page; i < res.total_pages; i++) {
               arr.push(i)
-              if (i - page === 10) {
+              if (i - page === 4) {
                 break
               }
             }
@@ -106,7 +109,7 @@ function App() {
           let arr = page > 1 ? [page - 1] : []
           for (let i = page; i < res.total_pages; i++) {
             arr.push(i)
-            if (i - page === 10) {
+            if (i - page === 4) {
               break
             }
           }

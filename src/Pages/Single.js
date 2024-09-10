@@ -50,7 +50,7 @@ function Single() {
       </div>
      <div className="bg-black">
         <h1 className=" text-4xl  text-white  text-center">Credits</h1>
-         <div className="w-full flex overflow-x-scroll  ">
+         <div className="w-full flex overflow-x-scroll 	 ">
         {
           actior.map((e,i)=>{
             return <div key={i} className="w-full text-center  ">
