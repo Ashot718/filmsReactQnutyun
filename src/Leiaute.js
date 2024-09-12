@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Futer from './Conponents/Futer'
 import Header from './Conponents/Header'
+import Erorr from './Conponents/Erorr';
+
 import { Outlet } from 'react-router-dom'
+
+
 
 
 function Leiaute() {
   return (
     <div>
         <Header/>
+        
         <min>
             <Outlet/>
         </min>

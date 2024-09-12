@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Conponents/Card";
 import "./App.css";
+import Erorr from "./Conponents/Erorr";
 
 const ganre = [
   { id: 28, name: "action" },
