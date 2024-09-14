@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Erorr from '../Conponents/Erorr';
+ 
+import Header from "../Conponents/Header";
+import Leiaute from "../Leiaute";
+import Futer from "../Conponents/Futer";
 
 
 
@@ -41,7 +44,8 @@ function Single() {
   return (
     
     <div className="w-full  " >
-      <Erorr/>
+      <Header/>
+      <Leiaute/>
        <img src={img_url+single.backdrop_path}className="w-full h-screen absolute top-0 -z-20"/>
     <div className="w-full h-[80vh] flex justify-center items-center gap-[80px] ">
     <img src={img_url+single.poster_path}  className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg  md:hidden " /> 
@@ -97,7 +101,7 @@ function Single() {
       </div>
       {popap !== "" ? <div className="w-full h-screen fixed z-20 bg-[rgba(0,0,0,0.465)] top-0 flex justify-center items-center cursor-pointer p-[5px] " onClick={() => setpopap("")}>
         <iframe allowFullScreen src={`https://www.youtube.com/embed/${popap}`} className="h-[90%] w-[90%] relative"></iframe></div> : null}
-        
+        <Futer/>
     </div>
   );
 }

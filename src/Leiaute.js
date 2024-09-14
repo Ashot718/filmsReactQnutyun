@@ -1,23 +1,21 @@
-import React, { useState } from 'react'
-import Futer from './Conponents/Futer'
-import Header from './Conponents/Header'
-import Erorr from './Conponents/Erorr';
 
+
+import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
+import Loading from './Conponents/Loading';
 
 
 
 
 function Leiaute() {
+  const [loading, setLeading] = useState(true)
+  setTimeout(() => {
+    setLeading(false);
+  }, 4000);
   return (
     <div>
-        <Header/>
-        
-        <min>
-            <Outlet/>
-        </min>
-        
-        <Futer/>
+      {loading ? <Loading/>:null}
+      <Outlet />
     </div>
   )
 }

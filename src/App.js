@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import Card from "./Conponents/Card";
+import Header from './Conponents/Header'
 import "./App.css";
-import Erorr from "./Conponents/Erorr";
+import Leiaute from "./Leiaute";
+import Futer from "./Conponents/Futer";
+
 
 const ganre = [
   { id: 28, name: "action" },
@@ -121,7 +124,11 @@ function App() {
 //items-center	flex-wrap	
 
 const ganresButColor = document.querySelectorAll(".ganresButColor")
-  return <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
+
+  return <div>
+    <Header/>
+    <Leiaute/>
+     <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
     <div className="flex justify-center  ">
            <input type="text" className="px-[40px] text-black w-full text-2xl rounded-2xl m-5  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
         </div>
@@ -156,7 +163,9 @@ const ganresButColor = document.querySelectorAll(".ganresButColor")
         
       })}
     </div>
-  </div>;
+  </div>
+  <Futer/>
+  </div>
 }
 
 export default App;
