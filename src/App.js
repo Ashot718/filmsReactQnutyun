@@ -126,8 +126,8 @@ function App() {
 const ganresButColor = document.querySelectorAll(".ganresButColor")
 
   return <div>
-    <Header/>
-    <Leiaute/>
+  <Header/>
+ <Leiaute/>
      <div className="flex justify-center items-center flex-wrap bg-black gap-[20px]">
     <div className="flex justify-center  ">
            <input type="text" className="px-[40px] text-black w-full text-2xl rounded-2xl m-5  "  value={searchInp} onChange={(e)=>setSearchInp(e.target.value)}  />
@@ -147,6 +147,7 @@ const ganresButColor = document.querySelectorAll(".ganresButColor")
       })}
     </div>
     <div className="flex justify-center items-center flex-wrap gap-[20px]">
+    
       {
         populary.map((e) => {
           return <Card populary={e} key={e.id} />

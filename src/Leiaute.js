@@ -11,7 +11,7 @@ function Leiaute() {
   const [loading, setLeading] = useState(true)
   setTimeout(() => {
     setLeading(false);
-  }, 4000);
+  }, 2000);
   return (
     <div>
       {loading ? <Loading/>:null}

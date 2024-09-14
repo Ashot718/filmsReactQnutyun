@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
- 
+import Erorr from '../Conponents/Erorr';
 import Header from "../Conponents/Header";
 import Leiaute from "../Leiaute";
 import Futer from "../Conponents/Futer";
@@ -12,7 +12,7 @@ function Single() {
     const img_url = "https://image.tmdb.org/t/p/w500";
   //  let filmId = location.search.replace(/[^0-9]/g,'')
     const id = useParams();
-    const [single, setSingle] = useState([]);  
+    const [single, setSingle] = useState({});  
     const [vidio,setVidio]= useState([])
     const [popap ,setpopap]=useState("")
     const [actior,setActior]= useState([])
@@ -44,8 +44,8 @@ function Single() {
   return (
     
     <div className="w-full  " >
-      <Header/>
       <Leiaute/>
+      <Header/>
        <img src={img_url+single.backdrop_path}className="w-full h-screen absolute top-0 -z-20"/>
     <div className="w-full h-[80vh] flex justify-center items-center gap-[80px] ">
     <img src={img_url+single.poster_path}  className="w-[350px] h-[500px] border-[30px] border-[rgba(0,0,0,0.6)] rounded-lg  md:hidden " /> 
@@ -61,11 +61,21 @@ function Single() {
          <div className="w-full flex overflow-x-scroll 	 ">
         {
           actior.map((e,i)=>{
-            return <div key={i} className="w-full text-center  ">
-              <div className="w-[400px] h-[500px] p-[20px]    ">
-              <img src={img_url+e.profile_path}  className='w-[350px] h-[400px] border-[1px] border-white'/>
-              <h1 className="text-3xl text-white">{e.name} </h1>
-              </div>
+            return <div key={i} className="w-full text-center p-[20px]">
+             <div
+  class="relative drop-shadow-xl w-[300px] h-[380px] overflow-hidden rounded-xl bg-[#000000]"
+>
+  <div
+    class="absolute flex items-center justify-center text-white z-[1] opacity-90 rounded-xl inset-0.5 bg-[#000000] "
+  >
+          <div className="w-[300px] h-[380px] p-[20px]    ">
+            <img src={img_url+e.profile_path}  className='w-[250px] h-[300px] rounded-xl'/>
+             <h1 className="text-2xl text-white">{e.name} </h1>
+          </div>
+  </div>
+  <div class="absolute w-[300px] h-[350px] bg-white blur-[50px] -left-1/2 -top-1/2"></div>
+</div>
+
              
             </div>
           })
@@ -109,4 +119,4 @@ function Single() {
 export default Single;
 
 
-
+/**/
