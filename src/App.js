@@ -77,7 +77,7 @@ function App() {
         }
         );
     }
-  }, [searchInp]);
+  }, [searchInp,page]);
   
   
 
